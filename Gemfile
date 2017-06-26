@@ -13,6 +13,12 @@ gem 'test-unit'
 
 gem 'bcrypt', '3.1.11'
 
+group :development do
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-rails'
+end
+gem 'jquery-rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
