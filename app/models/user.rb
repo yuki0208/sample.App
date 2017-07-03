@@ -64,7 +64,7 @@ end
     UserMailer.password_reset(self).deliver_now
   end
 
-  # パスワード再設定期限が切れている(メールの送信時刻が現在時刻より2時間以上前の場合trueを返す)
+  # パスワード再設定期限が切れている(メールの送信時刻が現在時刻より2時間以上前の場合trueを返す
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
   end
