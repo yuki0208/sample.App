@@ -66,7 +66,7 @@ private
  # 正しいユーザーかどうか確認(currunt_user=認証時に使用したユーザー)
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
+    redirect_to(root_url) unless current_user ==  @user
   end
 
   def admin_user
