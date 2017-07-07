@@ -70,6 +70,11 @@ end
     reset_sent_at < 2.hours.ago
   end
 
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
+
+
  private
 
   # メールアドレスをすべて小文字にする
