@@ -1,5 +1,14 @@
 class PictureUploader < CarrierWave::Uploader::Base
 
+    include CarrierWave::MiniMagick
+    process resize_to_limit: [400, 400]
+
+    if Rails.env.production?
+      storage :fog
+     else
+      storage :file
+    end
+
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -10,9 +19,18 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
+  
+  # アップロードファイルの保存先ディレクトリは上書き可能
+  # 下記はデフォルトの保存先  
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
+
+   # アップロード可能な拡張子のリスト
+  def extension_white_list
+    %w(jpg jpeg gif png)
+  end
+end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
@@ -45,5 +63,3 @@ class PictureUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
-end
