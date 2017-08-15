@@ -1,11 +1,18 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <%= link_to "sample app", root_path, id: "logo" %>
+    <button type="button" class="navbar-toggle collapsed"data-toggle="collapse"data-target="#navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",    root_path %></li>
-        <li><%= link_to "Help",    help_path %></li>
-        <% if logged_in? %>
+      <div class="collapse navbar-collapse" id="navbar">
+	<ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Home",    root_path %></li>
+          <li><%= link_to "Help",    help_path %></li>
+          <% if logged_in? %>
           <li><%= link_to "Users", users_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -20,10 +27,11 @@
               </li>
             </ul>
           </li>
-        <% else %>        
+          <% else %>        
           <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-      </ul>
+          <% end %>
+	</ul>
+      </div>
     </nav>
   </div>
 </header>
