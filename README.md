@@ -4,6 +4,8 @@
 [*Ruby on Rails チュートリアル: 実例を使って Rails を学ぼう*](http://railstutorial.jp/)
 [Michael Hartl](http://www.michaelhartl.com/) 著
 
+チュートリアルを使って実際につくったサンプルアプリ（テストは省略）
+
 ## ライセンス
 
 [Ruby on Rails チュートリアル](http://railstutorial.jp/)内にあるすべてのソースコードは
@@ -25,7 +27,7 @@ $ bundle install --without production
 $ rails db:migrate
 ```
 
-最後に、テストを実行してうまく動いているかどうか確認してください。
+~~最後に、テストを実行してうまく動いているかどうか確認してください。~~
 
 ```
 $ rails test
