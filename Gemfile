@@ -78,3 +78,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "ffi", ">= 1.9.24"
+gem "actionview", ">= 5.1.6.2"
+gem "nokogiri", ">= 1.8.5"
+gem "activejob", ">= 5.1.6.1"
