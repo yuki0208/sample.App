@@ -7,7 +7,7 @@ end
 
 gem 'rails', '~> 5.1.1'
 
-gem 'bootstrap-sass', '3.3.6'
+gem "bootstrap-sass", ">= 3.4.1"
 
 gem 'test-unit'
 
@@ -83,3 +83,4 @@ gem "ffi", ">= 1.9.24"
 gem "actionview", ">= 5.1.6.2"
 gem "nokogiri", ">= 1.8.5"
 gem "activejob", ">= 5.1.6.1"
+
